@@ -1,0 +1,13 @@
+
+
+<h1>Faça o sorteio do seu amigo secreto</h1>
+<h3>Fiz isso aqui correndo gente, sejam sinceros. Clique apenas uma vez no botão. Tchau obrigado!</h3>
+
+<%= form_for :friends, :url => { :action => "realize" } do |f| %>
+
+Quem é você?
+<%= collection_select(:get, :friend_id, @friends, :id, :name, prompt: false)%>
+
+<%=  f.submit "Gerar" %>
+<% end %>
+

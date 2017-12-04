@@ -1,0 +1,10 @@
+<h1>Showing a friend</h1>
+
+<p>
+    name: <%= @friend.name %>
+</p>
+<p>
+    Exception: <%= @friend.exception%>
+</p>
+<%= link_to  "Edit this friend", edit_friend_path(@friend) %>
+<%= link_to  "Back to friends listing", friends_path %>

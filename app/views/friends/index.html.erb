@@ -1,0 +1,21 @@
+<h1>Listing all Friends</h1>
+
+<p>
+    <%= link_to "Create a Friend", new_friend_path %>
+</p>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Exception</th>
+    </tr>
+    <% @friends.each do |friend| %>
+        <tr>
+            <td><%= friend.name %></td>
+            <td><%= friend.exception %></td>
+            <td><%= check_box_tag 'escolhido', '1', friend.wasChoiced %></div>
+            <td><%= link_to "Edit", edit_friend_path(friend) %></td>
+            <td><%= link_to "Show", friend_path(friend) %></td>
+            <td><%= link_to "Delete", friend_path(friend), method: :delete, data: {confirm: "Are you sure?"} %></td>
+        </tr>
+    <% end %>
+</table>
